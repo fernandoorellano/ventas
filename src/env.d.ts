@@ -1,24 +1,16 @@
 // Define the type of the environment variables.
 declare interface Env {
   readonly NODE_ENV: string;
+  readonly NG_APP_FIRE_NOMBRE_COLECCION: string;
+   // firebase config
+  readonly NG_APP_FIREBASE_APIKEY: string;
+  readonly NG_APP_FIREBASE_AUTHDOMAIN: string;
+  readonly NG_APP_FIREBASE_PROJECTID: string;
+  readonly NG_APP_FIREBASE_STORAGEBUCKET: string;
+  readonly NG_APP_FIREBASE_MESAGING: string;
+  readonly NG_APP_FIREBASE_APPID: string;
   // Replace the following with your own environment variables.
-  readonly NG_APP_ARTICULO_1: string;
-  readonly NG_APP_ARTICULO_2: string;
-  readonly NG_APP_ARTICULO_3: string;
-  readonly NG_APP_ARTICULO_4: string;
-  readonly NG_APP_ARTICULO_5: string;
-  readonly NG_APP_ARTICULO_6: string;
-  readonly NG_APP_ARTICULO_7: string;
-  readonly NG_APP_ARTICULO_8: string;
-  readonly NG_APP_ARTICULO_9: string;
-  readonly NG_APP_ARTICULO_10: string;
-  readonly NG_APP_ARTICULO_11: string;
-  readonly NG_APP_ARTICULO_12: string;
-  readonly NG_APP_ARTICULO_13: string;
-  readonly NG_APP_ARTICULO_14: string;
-  readonly NG_APP_ARTICULO_15: string;
-  readonly NG_APP_ARTICULO_16: string;
-  readonly NG_APP_ARTICULO_18: string;
+  readonly NG_APP_ARTICULO: string;
   // Example: NGX_VERSION: string;
   [key: string]: any;
 }

@@ -1,0 +1,23 @@
+<div class="contenedor">   
+    <div class="row">
+        <div class="col">
+            <p>Formulario de ingreso</p>
+            <form [formGroup]="crearForm" (ngSubmit)="crearArt()">
+                <input class="form-control"
+                    placeholder="Ingrese imagen"
+                    formControlName="imagen">
+                <input class="form-control"
+                    placeholder="Ingrese descripcion" 
+                    formControlName="descripcion">
+                <input class="form-control"
+                    placeholder="Ingrese nombre" 
+                    formControlName="nombre">
+                <input class="form-control"
+                    placeholder="Ingrese precio"
+                    formControlName="precio">
+                <button type="submit">Guardar</button>
+                <span>{{mensajeCrear}}</span>
+            </form>
+        </div>
+    </div>
+</div>
