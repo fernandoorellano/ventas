@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { addDoc, and, collection, collectionData, doc, Firestore, orderBy, query, updateDoc } from '@angular/fire/firestore';
+import { addDoc, and, collection, collectionData, deleteDoc, doc, Firestore, orderBy, query, updateDoc } from '@angular/fire/firestore';
 import { environment } from '../../environments/environment.development';
 import { Articulo } from '../interfaces/articulo';
 import { Observable } from 'rxjs';
@@ -33,6 +33,10 @@ export class FirestoreService {
   actualizarDatos(articulo: any){
     const coleccionRef = doc(this._firestore, environment.fireNombreColeccion, articulo.id);
     updateDoc(coleccionRef, articulo);
+  }
+
+  eliminarDatos(articulo: any){
+    deleteDoc(doc(this._firestore, environment.fireNombreColeccion, articulo.id));
   }
 
 }

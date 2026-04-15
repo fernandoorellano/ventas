@@ -11,6 +11,11 @@ declare interface Env {
   readonly NG_APP_FIREBASE_APPID: string;
   // Replace the following with your own environment variables.
   readonly NG_APP_ARTICULO: string;
+  // 
+  readonly NG_APP_FIRE_NOMBRE_COLECCION_USUARIO: string;
+  //texto whatsapp
+  readonly NG_APP_WP_TEXTO_INICIO: string;
+  readonly NG_APP_WP_TEXTO_CUERPO: string;
   // Example: NGX_VERSION: string;
   [key: string]: any;
 }

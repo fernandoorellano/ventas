@@ -8,5 +8,8 @@ export const environment = {
         appId: import.meta.env.NG_APP_FIREBASE_APPID
     },
     fireNombreColeccion: import.meta.env.NG_APP_FIRE_NOMBRE_COLECCION,
-    articulo: import.meta.env.NG_APP_ARTICULO
+    articulo: import.meta.env.NG_APP_ARTICULO,
+    inicioTextoUrl: import.meta.env.NG_APP_WP_TEXTO_INICIO,
+    cuerpoTextoUrl: import.meta.env.NG_APP_WP_TEXTO_CUERPO,
+    usuarioColleccion: import.meta.env.NG_APP_FIRE_NOMBRE_COLECCION_USUARIO
 };

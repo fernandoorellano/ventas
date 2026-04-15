@@ -1,122 +1,13 @@
-<p>Bienvenidos a Ratans y +</p>
-<p>Productos Destacados</p>
-
-<!-- <button (click)="fireServ.crearDatos()">agregar</button> -->
-
 <div class="row">
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" *ngFor="let item of fireServ.articulos, index as index">
+    <h3>Productos Destacados</h3>
+    <div class="col" *ngFor="let item of fireServ.articulos, index as index">
         <div class="columna">
             <img [src]='img_articulo+item.imagen' alt="1">
-            <p>{{item.nombre}}</p>
-            <p>{{item.descripcion}}</p>
-            <p>{{item.precio}}</p>
+            <div class="descripcion">
+                <p>{{item.nombre}}</p>
+                <p>${{item.precio}}</p>
+                <button (click)="carritoServ.agregarCarrito(item)">Lo quiero</button>
+            </div>
         </div>
     </div>
 </div>
-
-
-<!-- 
-<div class="row" *ngFor="let item of fireServ.articulos, index as index">
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_bano' alt="1">
-            <p>{{item.nombre}}</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_utensillo'>
-            <p>Utensillo</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_tacho_metal'>
-            <p>Tacho de metal</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_cesto_ropa'>
-            <p>Cesto de ropa</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_organizador_zapatos'>
-            <p>Organizador de zapatos</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_organizador_ropa'>
-            <p>Organizador de ropa</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_organizador'>
-            <p>Organizador</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_balde_mopa'>
-            <p>Balde con mopa</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_spray_aceitero'>
-            <p>Spray aceitero</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_cesto_basura_chico'>
-            <p>Cesto de basura chico</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_copa_champain'>
-            <p>Copa champan</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_copa_lineal'>
-            <p>Copa lineal</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_plato_playo'>
-            <p>Plato playo</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_plato_playo_forjado'>
-            <p>Plato playo forjado</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_nose'>
-            <p>Nose</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_cesto_nose'>
-            <p>Cesto Nose</p>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="columna">
-            <img [src]='img_cesto_ratan_contapa'>
-            <p>Cesto ratan con tapa</p>
-        </div>
-    </div>
-</div> -->

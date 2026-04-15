@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { FirestoreService } from '../../servicios/firestore.service';
 import { CommonModule } from '@angular/common';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   selector: 'app-inicio',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class InicioComponent {
 
-  constructor(public fireServ: FirestoreService){}
+  constructor(public fireServ: FirestoreService, public carritoServ: CarritoService){}
 
   img_articulo = environment.articulo;
 

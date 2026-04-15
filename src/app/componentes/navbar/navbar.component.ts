@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CarritoService } from '../../servicios/carrito.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,4 +12,6 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
 
+   constructor(public carritoServ: CarritoService){}
+  
 }

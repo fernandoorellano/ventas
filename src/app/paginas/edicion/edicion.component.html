@@ -1,15 +1,16 @@
-<p>Edicion</p>
-
 <div class="row">
-    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" *ngFor="let item of fireServ.articulos, index as index">
+    <h3>Edicion</h3>
+    <div class="col" *ngFor="let item of fireServ.articulos, index as index">
         <div class="columna">
             <img [src]='img_articulo+item.imagen' alt="1">
             <input [(ngModel)]="item.nombre" placeholder="Ingrese nombre">
             <input [(ngModel)]="item.descripcion" placeholder="Ingrese descripcion">
             <input [(ngModel)]="item.precio" placeholder="Ingrese precio">
-            <input [(ngModel)]="item.id" placeholder="Ingrese id">
             <button class="btnSucces" (click)="fireServ.actualizarDatos(item)">
-                ok
+                Guardar cambios
+            </button>
+            <button class="btnSucces" (click)="fireServ.eliminarDatos(item)">
+                Eliminar
             </button>
         </div>
     </div>
