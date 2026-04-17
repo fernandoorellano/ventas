@@ -1,16 +1,18 @@
-<div class="row" *ngIf="carritoServ.cantidadArticulos == 0">
+<div class="contenedor">
     <p>Aun no hay datos</p>
-    <p>Volver a <b (click)="volver()">inicio</b></p>
-</div>
-<div class="row" *ngIf="carritoServ.cantidadArticulos != 0">
-    <div class="col" *ngFor="let item of carritoServ.articulosAgregado, index as index">
-        <div class="columna">
-            <img [src]='img_articulo+item.imagen' alt="1">
-            <p>{{item.nombre}}</p>
-            <p>{{item.descripcion}}</p>
-            <p>{{item.precio}}</p>
-        </div>
+    <div class="row" *ngIf="articulosGuardados == ''">
+        <p>Volver a <b (click)="volver()">inicio</b></p>
     </div>
-    <button (click)="confirmarCompra(carritoServ.articulosAgregado)">Confirmar compra</button>
-    <button (click)="volver()">Seguir viendo</button>
+    <div class="row" *ngIf="articulosGuardados != ''">
+        <div class="col" *ngFor="let item of articulosGuardados, index as index">
+            <div class="columna">
+                <img [src]='img_articulo+item.imagen' alt="1">
+                <p>{{item.nombre}}</p>
+                <p>{{item.descripcion}}</p>
+                <p>{{item.precio}}</p>
+            </div>
+        </div>
+        <button (click)="confirmarCompra(carritoServ.articulosAgregado)">Confirmar compra</button>
+        <button (click)="volver()">Seguir viendo</button>
+    </div>
 </div>

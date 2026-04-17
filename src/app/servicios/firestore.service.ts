@@ -11,6 +11,7 @@ export class FirestoreService {
   private readonly _firestore = inject(Firestore);
   private readonly _contanctCollec = collection(this._firestore, environment.fireNombreColeccion);
   articulos!: Articulo[];
+  // articulosGuardados: any = [];
 
   constructor() {}
 
@@ -21,6 +22,7 @@ export class FirestoreService {
 
   obtenerDatos(){
     this.getAll().subscribe(res => {
+      // this.articulosGuardados = localStorage.getItem("articulos");
       this.articulos = res;
     });
   }

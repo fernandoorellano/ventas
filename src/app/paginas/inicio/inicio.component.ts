@@ -19,6 +19,6 @@ export class InicioComponent {
 
   ngOnInit(): void {
     this.fireServ.obtenerDatos();
-  } 
+  }
   
 }
