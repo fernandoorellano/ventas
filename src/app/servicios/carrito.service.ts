@@ -1,40 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Articulo } from '../interfaces/articulo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  articulosAgregado: any = [];
+  articulos = [];
   cantidadArticulos = 0;
-  articulosGuardados: any = [];
+  articulosLocalstorage = [];
 
   constructor(private router: Router) { }
 
   agregarCarrito(articulo: any){
-    this.articulosAgregado.push(articulo);
-    //    if(localStorage.getItem("articulos")){
-    //     const datos = localStorage.getItem("articulos");
-    //     const articulos = JSON.parse(datos)
-    //   console.log("Hay datos", articulos.length())
-    // }
-    // if(!localStorage.getItem("articulos")){
-    //   console.log("NO Hay datos")
-    // }
-
     const datosGuardados = localStorage.getItem("articulos");
-    this.articulosGuardados = JSON.parse(datosGuardados);
-    if(this.articulosGuardados){
-      this.articulosGuardados.push(this.articulosAgregado);
-      localStorage.setItem("articulos", JSON.stringify(this.articulosGuardados));
-    }
-    if(!this.articulosGuardados){
-    localStorage.setItem("articulos", JSON.stringify(this.articulosAgregado));
-    }
+    this.articulosLocalstorage = JSON.parse(datosGuardados); 
+
+    this.articulosLocalstorage = JSON.parse(localStorage.getItem("articulos")) || [];
+    this.articulosLocalstorage.push(articulo);
+    localStorage.setItem("articulos", JSON.stringify(this.articulosLocalstorage));
     
-    this.cantidadArticulos = Object.keys(this.articulosAgregado).length;
-    this.router.navigate(['carrito']);
+    this.cantidadArticulos = Object.keys(this.articulos).length;
+    this.router.navigate(['carrito']);   
   }
 
 }

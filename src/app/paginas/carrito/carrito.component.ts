@@ -39,13 +39,6 @@ export class CarritoComponent {
   ngOnInit(): void {
     const datosGuardados = localStorage.getItem("articulos");
     this.articulosGuardados = JSON.parse(datosGuardados);
-    if(this.articulosGuardados){
-      console.log(this.articulosGuardados.length)
-      for (let index = 0; index < this.articulosGuardados.length; index++) {
-        console.log(index,"). ",this.articulosGuardados[index]);
-      }
-    }
-    
   }
 
 }
