@@ -10,6 +10,7 @@
                 <p>{{item.nombre}}</p>
                 <p>{{item.descripcion}}</p>
                 <p>{{item.precio}}</p>
+                <button (click)="eliminar(index)">eliminar</button>
             </div>
         </div>
         <button (click)="confirmarCompra(carritoServ.articulosLocalstorage)">Confirmar compra</button>

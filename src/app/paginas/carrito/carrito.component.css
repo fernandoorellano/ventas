@@ -12,14 +12,27 @@
 .col{
     display: flex;
     justify-content: center;
-    max-width: 250px;
+    max-width: 350px;
+    min-width: 350px;
     margin: 3px;
+    padding: 10px;
+    border: 1px solid rgb(119, 119, 119);
+}
+
+.columna{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 img{
-    /* width: 300px; */
+    /* min-width: 300px; */
+    min-height: 300px;
+    /* max-width: 300px; */
     max-height: 300px;
+    object-fit: cover;
 }
+
 
 input{
     border: 1px solid rgb(88, 88, 88);
@@ -37,7 +50,7 @@ button{
 
     .col{
         border: 1px solid rgb(158, 158, 158);
-        width: 140px;
+        min-width: 140px;
         margin: 5px;
     }
 
@@ -48,8 +61,8 @@ button{
         margin: 10px;
     }
 
-    img{
-        max-width: 140px;
+     img{
+        min-height: 140px;
         max-height: 140px;
     }
 

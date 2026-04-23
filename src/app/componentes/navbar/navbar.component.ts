@@ -12,6 +12,10 @@ import { CarritoService } from '../../servicios/carrito.service';
 })
 export class NavbarComponent {
 
-   constructor(public carritoServ: CarritoService){}
+  constructor(public carritoServ: CarritoService){}
+
+  ngOnInit(): void {
+    this.carritoServ.obtenerArticulos();
+  }
   
 }

@@ -23,17 +23,25 @@ export class CarritoComponent {
     let nombre: any = [];
     let precio: any = [];
     for (let index = 0; index < articulos.length; index++) {
-      nombre.push(articulos[index].descripcion);
+      nombre.push(articulos[index].descripcion+".%0A");
       precio.push(articulos[index].precio);
     }
     
     // let url = environment.inicioTextoUrl;
-    let url = "https://wa.me/+5491168449947?text=Hola%20quiero%20comprar%20el%20articulo%20"+nombre;
+    console.log("Articulos: ", nombre);
+    let url = "https://wa.me/+5491168449947?text=Hola%20quiero%20info%20de%0A"+nombre;
     window.open(url, "_blank");
   }
 
   volver(){
     this.router.navigate(['inicio']);
+  }
+
+  eliminar(index: any){
+    this.articulosGuardados.splice(index, 1);
+    localStorage.clear();
+    localStorage.setItem("articulos", JSON.stringify(this.articulosGuardados));
+    this.carritoServ.cantidadArticulos = Object.keys(this.articulosGuardados).length;
   }
 
   ngOnInit(): void {
