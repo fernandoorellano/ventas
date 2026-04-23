@@ -21,7 +21,7 @@ export class CarritoService {
     this.articulosLocalstorage.push(articulo);
     localStorage.setItem("articulos", JSON.stringify(this.articulosLocalstorage));
     
-    this.cantidadArticulos = Object.keys(this.articulos).length;
+    this.cantidadArticulos = Object.keys(this.articulosLocalstorage).length;
     this.router.navigate(['carrito']);
   }
 

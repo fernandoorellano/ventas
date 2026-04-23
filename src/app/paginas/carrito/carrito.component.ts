@@ -19,18 +19,21 @@ export class CarritoComponent {
   
   constructor(public carritoServ : CarritoService, private router: Router) {}
 
-  confirmarCompra(articulos: any){
+  confirmarCompra(){
+    this.obtenerDatos();
     let nombre: any = [];
     let precio: any = [];
-    for (let index = 0; index < articulos.length; index++) {
-      nombre.push(articulos[index].descripcion+".%0A");
-      precio.push(articulos[index].precio);
+    for (let index = 0; index < this.articulosGuardados.length; index++) {
+      nombre.push(this.articulosGuardados[index].descripcion+".%0A");
+      precio.push(this.articulosGuardados[index].precio);
     }
-    
-    // let url = environment.inicioTextoUrl;
-    console.log("Articulos: ", nombre);
-    let url = "https://wa.me/+5491168449947?text=Hola%20quiero%20info%20de%0A"+nombre;
-    window.open(url, "_blank");
+    if(this.articulosGuardados.length == 1){
+      let url = "https://wa.me/+5491168449947?text=Hola!%20Quiero%20info%20del%20articulo%20"+nombre;
+      window.open(url, "_blank");
+    }else{
+      let url = "https://wa.me/+5491168449947?text=Hola!%20Quiero%20info%20de%20los%20articulos%0A"+nombre;
+      window.open(url, "_blank");
+    }
   }
 
   volver(){
@@ -45,6 +48,10 @@ export class CarritoComponent {
   }
 
   ngOnInit(): void {
+    this.obtenerDatos();
+  }
+
+  obtenerDatos(){
     const datosGuardados = localStorage.getItem("articulos");
     this.articulosGuardados = JSON.parse(datosGuardados);
   }
